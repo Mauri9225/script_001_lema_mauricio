@@ -1,0 +1,33 @@
+.container {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: blueviolet;
+    display: flex;
+}
+
+.demo {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    background-color: aqua;
+
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    border: 1px solid aqua;
+    border-radius: 5px; /* para el radio del borde*/
+    transition: background-color 1s, transform 1s;
+}
+.content:hover{
+    background-color: beige;
+    border: 1px solid black;
+    transform: translateY(-5px) translateX(5px) rotate(5deg);
+}
+
+.mauri{
+    background-color: brown;
+}
