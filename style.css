@@ -2,6 +2,7 @@
     font-family: Arial, Helvetica, sans-serif;
     background-color: blueviolet;
     display: flex;
+    flex-direction: column;
 }
 
 .demo {
@@ -30,4 +31,16 @@
 
 .mauri{
     background-color: brown;
+}
+
+.fizz:hover{
+    background-color: beige;
+}
+
+.buzz:hover{
+    transform: translateY(-5px) ;
+}
+
+.fizzbzz:hover{
+    transform: rotate(5deg) translateY(-5px);
 }
