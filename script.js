@@ -21,6 +21,7 @@ function createMatrix(dimension, container, divisorfizz, divisorBuzz){
             addClass(content, "content")
             fizz(divisorfizz, content, counter)
             buzz(divisorBuzz, content, counter)
+            fizzbuzz(divisorfizz, divisorBuzz, content, counter)
             content.textContent = counter
             div.appendChild(content)
             counter++
@@ -41,6 +42,11 @@ function buzz(divisor2, cube,  number){
     }
 }
 
+function fizzbuzz(divisor, divisor2, square_cube, number){
+    if (number%divisor == 0 && number%divisor2 == 0){
+        addClass(square_cube, "fizzbuzz")
+    }
+}
 
 document.addEventListener("DOMContentLoaded", function(){
     console.log("Ya se cargo este DOM")
