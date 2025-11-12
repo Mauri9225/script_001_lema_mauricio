@@ -1,7 +1,7 @@
 console.log("Hola Mundo soy Mauricio")
 var a = 1
 var b = 2
-var c = 1+2
+var c = 1 + 2
 console.log("el resultado es: ", c)
 
 function addClass(containerDiv, className){
@@ -12,6 +12,7 @@ function addClass(containerDiv, className){
 
 function createMatrix(dimension, container, divisorfizz, divisorBuzz){
     let counter = 1
+    container.innerHTML = "";
 
     for(let i = 0;i < dimension; i++){
         const div = document.createElement("div")
@@ -19,9 +20,11 @@ function createMatrix(dimension, container, divisorfizz, divisorBuzz){
         for(let j= 0;j< dimension; j++){
             const content = document.createElement("div")
             addClass(content, "content")
+            
             fizz(divisorfizz, content, counter)
             buzz(divisorBuzz, content, counter)
             fizzbuzz(divisorfizz, divisorBuzz, content, counter)
+            
             content.textContent = counter
             div.appendChild(content)
             counter++
@@ -48,8 +51,30 @@ function fizzbuzz(divisor, divisor2, square_cube, number){
     }
 }
 
+
+function buttonClicked(){
+    console.log("Me hicieron click")
+    const dimensionInput = document.getElementById("dimension")
+    const fizzInput = document.getElementById("fizz-divisor")
+    const buzzInput = document.getElementById("buzz-divisor")
+
+    const dimensionValue = parseInt(dimensionInput.value)
+    const fizzValue = parseInt(fizzInput.value)
+    const buzzValue = parseInt(buzzInput.value)
+
+    console.log(`El valor de dimension es: ${dimensionValue}`)
+    console.log(`El valor de fizz es: ${fizzValue}`)
+    console.log(`El valor de buzz es: ${buzzValue}`)
+
+    const matrixContainer= document.getElementById("matrixContainer");
+    createMatrix(dimensionValue, matrixContainer, fizzValue, buzzValue);
+}
+
 document.addEventListener("DOMContentLoaded", function(){
     console.log("Ya se cargo este DOM")
-    const container = document.querySelector(".container")
-    createMatrix(5, container, 2, 3 )
+    
+
+    const btnGenerate= document.getElementById("generate")
+    btnGenerate.addEventListener("click", buttonClicked)
 })
+

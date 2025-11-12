@@ -7,6 +7,27 @@
     </head>
     <body>
         <main class="container">
+            <h1>Fizz-Buzz</h1>
+            <div class="controls">
+               <div class="input-group">
+                 <label for="dimension">Dimension (nxn)</label>
+                 <input type="number" id="dimension" value="20" min="1" max="30">
+
+                </div> 
+                <div class="input-group">
+                 <label for="fizz-divisor">Fizz Divisor</label>
+                 <input type="number" id="fizz-divisor" value="20" min="1" max="30">
+
+                </div>
+
+                <div class="input-group">
+                 <label for="buzz-divisor">Buzz Divisor</label>
+                 <input type="number" id="buzz-divisor" value="20" min="1" max="30">
+
+                </div>
+                <button id="generate">Generate Matrix</button>
+            </div>
+            <div id="matrixContainer"></div>
         </main>
     </body>
 
